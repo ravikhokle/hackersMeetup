@@ -28,9 +28,9 @@ Branches & PRs (suggested)
 Judging checklist
 -----------------
 
-- Best use of GitHub: issues, branches, PRs, commits, workflows
-- Visible use of GitHub Copilot: see `docs/COPILOT_USAGE.md`
-- Clean code and strong documentation
+- **Best use of GitHub**: issues, branches, PRs, commits, workflows
+- **Visible use of GitHub Copilot**: see `docs/COPILOT_USAGE.md`
+- **Clean code and strong documentation**
 
 Features
 --------
@@ -39,10 +39,27 @@ Features
 - Lightweight API: `/api/analyze?repo=owner/repo`
 - Modern stack: Node.js + Express (server), React + Vite (client)
 
+Automation
+----------
+
+- CI: `.github/workflows/ci.yml` runs server tests and client build on pushes and PRs
+- PR Analyzer: `.github/workflows/analyze-pr.yml` runs the analyzer on every PR and posts a summary comment
+
 Example API call
 ----------------
 
 - `curl "http://localhost:4000/api/analyze?repo=facebook/react"`
+
+Demo / Screenshots
+------------------
+
+- Add screenshots to `/assets/` and reference them here to include a visual demo.
+
+How GitHub & Copilot were used
+-----------------------------
+
+- Copilot-assisted seed work was created on a clearly-labeled branch `copilot/seed` with commit `chore(copilot): seed analyzer and client components (copilot-assisted)`.
+- PRs, issues, and workflows were used to show CI and automation running on the repository.
 
 PR & Commit suggestions
 -----------------------
@@ -50,5 +67,14 @@ PR & Commit suggestions
 - Branch: `feature/readme-analyzer`
 - Commit: `feat(analyzer): add README suggestions analyzer`
 - PR: `Add README suggestions analyzer`
+
+Submission checklist
+--------------------
+
+- [ ] Public GitHub repo link
+- [ ] README describing idea, features, how GitHub and Copilot were used
+- [ ] Commit history and PRs demonstrating branching and contributions
+- [ ] Optional demo screenshots or short video
+
 
 *** End Patch

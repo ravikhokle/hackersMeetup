@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon --watch src --exec node src/index.js",
-    "test": "node --experimental-vm-modules C:/Users/ravik/OneDrive/Desktop/hackersMeetup/node_modules/jest/bin/jest.js --runInBand"
+    "test": "node --experimental-vm-modules C:/Users/ravik/OneDrive/Desktop/hackersMeetup/node_modules/jest/bin/jest.js --runInBand",
+    "analyze": "node src/cli/analyze.js"
   },
   "dependencies": {
     "axios": "^1.0.0",
