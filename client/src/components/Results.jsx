@@ -1,7 +1,14 @@
 import React from 'react';
 
 export default function Results({ result }) {
-  if (!result) return null;
+  if (!result) {
+    return (
+      <div className="bg-white shadow rounded-md p-6 text-slate-600">
+        <p className="text-center">Enter a public repository (owner/repo) and click <span className="font-medium">Analyze</span> to see recommendations.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white shadow rounded-md p-4">
       <h2 className="text-xl font-medium">Analysis for {result.meta.owner}/{result.meta.repo}</h2>
