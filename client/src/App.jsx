@@ -9,13 +9,13 @@ export default function App() {
   return (
     <div className="container">
       <Header />
-+
-+      <main>
-+        <AnalyzeForm onResult={setResult} />
-+        <Results result={result} />
-+      </main>
-+
-+      <Footer />
+
+      <main>
+        <AnalyzeForm onResult={setResult} />
+        <Results result={result} />
+      </main>
+
+      <Footer />
     </div>
   );
 }
