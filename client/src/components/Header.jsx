@@ -11,9 +11,7 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="text-sm">
-        <a className="text-slate-700 hover:text-blue-600" href="https://github.com/ravikhokle/hackersMeetup" target="_blank" rel="noreferrer">View on GitHub</a>
-      </nav>
+      {/* Navigation intentionally minimal on homepage */}
     </header>
   );
 }
