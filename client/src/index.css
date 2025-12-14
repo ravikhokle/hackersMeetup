@@ -1,11 +1,2 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@deprecated: use main.css instead
 
-/* tiny helper overrides */
-body { @apply bg-slate-50 text-slate-900; }
-.container { @apply max-w-3xl mx-auto p-6; }
-
-/* component spacing helpers */
-header + main { @apply space-y-4; }
-main > * + * { @apply mt-4; }

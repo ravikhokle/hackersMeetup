@@ -16,7 +16,7 @@ Quick start
 Styling
 -------
 
-- The client uses Tailwind CSS for styling. Run `npm install` in the client to ensure Tailwind and PostCSS are installed.
+- The client uses Tailwind CSS for styling. Tailwind is imported from `client/src/main.css`. Run `npm install` in the client to ensure Tailwind and PostCSS are installed.
 
 Branches & PRs (suggested)
 --------------------------
