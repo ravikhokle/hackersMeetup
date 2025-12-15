@@ -1,0 +1,16 @@
+# Labels to be synced to the repository
+- name: good first issue
+  color: F7CA88
+  description: "Good first issue for newcomers"
+- name: enhancement
+  color: 84CC16
+  description: "New feature or request"
+- name: bug
+  color: DC2626
+  description: "Bug report"
+- name: documentation
+  color: 0EA5E9
+  description: "Improvements or additions to documentation"
+- name: help wanted
+  color: 38BDF8
+  description: "Extra attention is needed"

@@ -1,0 +1,26 @@
+name: Scheduled Repository Scan
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # daily at 02:00 UTC
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install server deps
+        run: cd server && npm ci
+      - name: Run analyzer
+        run: |
+          cd server
+          node src/cli/analyze.js "$GITHUB_REPOSITORY" > report.md
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-repo-analysis
+          path: server/report.md

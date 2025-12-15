@@ -53,7 +53,8 @@ Example API call
 Demo / Screenshots
 ------------------
 
-- Add screenshots to `/assets/` and reference them here to include a visual demo.
+- ![Demo screenshot](assets/screenshot.svg)
+- Add more screenshots or a short demo video to `/assets/` and reference them here to include a visual demo.
 
 How GitHub & Copilot were used
 -----------------------------
