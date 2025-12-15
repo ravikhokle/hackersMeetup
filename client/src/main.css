@@ -4,6 +4,7 @@
 
 /* tiny helper overrides */
 body { @apply bg-slate-50 text-slate-900; }
+html.dark body { @apply bg-slate-900 text-slate-100; }
 .container { @apply max-w-3xl mx-auto p-6; }
 
 /* component spacing helpers */

@@ -1,4 +1,5 @@
 import React from 'react';
+import DarkToggle from './DarkToggle.jsx';
 
 export default function Header() {
   return (
@@ -11,7 +12,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Navigation intentionally minimal on homepage */}
+      <div className="flex items-center gap-3">
+        <DarkToggle />
+      </div>
     </header>
   );
 }

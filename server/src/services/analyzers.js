@@ -17,9 +17,13 @@ export async function analyzeRepository(fullName) {
   const readme = await fetchRepoReadme(owner, repo, token).catch(() => '');
   const tree = await fetchRepoTree(owner, repo, token).catch(() => []);
   const commits = await fetchRepoCommitsCount(owner, repo, token).catch(() => 0);
+  const languages = await fetchRepoLanguages(owner, repo, token).catch(() => ({}));
 
   const structure = tree.map((t) => ({ name: t.name, type: t.type }));
   const codeQuality = codeQualityFromFiles(tree);
+  const sortedLanguages = Object.entries(languages)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, bytes]) => ({ name, bytes }));
 
   const readmeSuggestions = [];
   if (!readme || readme.length < 100) readmeSuggestions.push('Expand README with usage examples and badges');
@@ -28,11 +32,13 @@ export async function analyzeRepository(fullName) {
   const recommendations = [];
   if (!codeQuality.hasTests) recommendations.push('Add tests: add a `tests/` directory with basic unit tests');
   if (commits < 10) recommendations.push('Encourage more frequent commits and descriptive messages');
+  if (!sortedLanguages.length) recommendations.push('Add language files or check languages API access');
 
   return {
     meta: { owner, repo, commits },
     structure,
     codeQuality,
+    languages: sortedLanguages,
     readmeSuggestions,
     recommendations
   };

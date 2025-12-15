@@ -28,3 +28,9 @@ export async function fetchRepoCommitsCount(owner, repo, token) {
   if (match) return Number(match[1]);
   return res.data.length;
 }
+
+export async function fetchRepoLanguages(owner, repo, token) {
+  const headers = token ? { Authorization: `token ${token}` } : {};
+  const res = await githubApi.get(`/repos/${owner}/${repo}/languages`, { headers });
+  return res.data; // { JavaScript: 12345, HTML: 2345 }
+}
